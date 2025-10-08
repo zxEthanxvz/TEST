@@ -1,0 +1,108 @@
+<!--
+GitHub Pages — Simple HTML Site
+
+Instructions (quick):
+1) Create a new repository on GitHub. If you want a user site, name it EXACTLY: <your-username>.github.io
+2) Copy this file as index.html to the repository root (or into a /docs folder for a project site).
+3) From your terminal:
+   git init
+   git add index.html
+   git commit -m "Initial commit"
+   git branch -M main
+   git remote add origin git@github.com:USERNAME/REPO.git   # or https URL
+   git push -u origin main
+4) On GitHub: Settings -> Pages -> choose branch (main) and folder (root or /docs) -> Save.
+5) Your site will be available at:
+   - User site: https://USERNAME.github.io
+   - Project site: https://USERNAME.github.io/REPO
+
+Replace USERNAME and REPO with your GitHub username and repository name.
+-->
+
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>我的 GitHub Pages 網站</title>
+  <meta name="description" content="示範使用 GitHub 建立的簡單 HTML 網站">
+  <style>
+    :root{--bg:#0f172a;--card:#0b1220;--accent:#7dd3fc;--muted:#94a3b8}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;background:linear-gradient(180deg,var(--bg),#071028);color:#e6eef6;line-height:1.5}
+    .wrap{max-width:960px;margin:48px auto;padding:24px}
+    header{display:flex;align-items:center;justify-content:space-between}
+    header h1{font-size:1.6rem;margin:0}
+    nav a{color:var(--accent);text-decoration:none;margin-left:12px}
+    .hero{background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));padding:28px;border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,0.6)}
+    .grid{display:grid;grid-template-columns:1fr 320px;gap:18px;margin-top:18px}
+    .card{background:var(--card);padding:18px;border-radius:10px}
+    footer{margin-top:28px;color:var(--muted);font-size:0.9rem;text-align:center}
+    .btn{display:inline-block;padding:8px 12px;border-radius:8px;background:transparent;border:1px solid rgba(125,211,252,0.18);color:var(--accent);text-decoration:none}
+    @media(max-width:780px){.grid{grid-template-columns:1fr}.wrap{margin:18px;padding:16px}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>我的 GitHub Pages 網站</h1>
+      <nav>
+        <a href="#about">關於</a>
+        <a href="#contact">聯絡</a>
+      </nav>
+    </header>
+
+    <section class="hero card">
+      <h2>歡迎！</h2>
+      <p>這是一個用於 GitHub Pages 的簡單靜態 HTML 範例。把這個檔案命名為 <code>index.html</code> 並放到儲存庫的根目錄或 <code>/docs</code> 資料夾，然後在 GitHub Pages 設定中啟用它。</p>
+      <p><a class="btn" href="#about">開始客製化</a></p>
+    </section>
+
+    <div class="grid">
+      <main class="card">
+        <section id="about">
+          <h3>關於這個範例</h3>
+          <p>內含簡易的排版、響應式格線與一個右側側欄。適合作為個人作品頁或簡易介紹頁的起點。</p>
+          <h4>如何客製化</h4>
+          <ul>
+            <li>在 &lt;head&gt; 中修改 <code>&lt;title&gt;</code> 與描述。</li>
+            <li>替換文字、加入圖片（放在 repo 的 images 資料夾）。</li>
+            <li>要增加更多頁面，可建立其他 HTML 檔案並在 nav 加入連結。</li>
+          </ul>
+        </section>
+
+        <section id="contact" style="margin-top:14px">
+          <h3>聯絡我</h3>
+          <p>把下面的表單改成你要的內容（此為靜態範例，實際送出需要後端或第三方表單服務）。</p>
+          <form onsubmit="alert('這是一個靜態範例：在 GitHub Pages 上需要第三方服務處理表單。'); return false;">
+            <label style="display:block;margin-bottom:6px">姓名<input style="width:100%;padding:8px;margin-top:6px;border-radius:6px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:inherit"></label>
+            <label style="display:block;margin-top:8px">訊息<textarea style="width:100%;height:96px;padding:8px;margin-top:6px;border-radius:6px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:inherit"></textarea></label>
+            <p><button class="btn" type="submit">送出</button></p>
+          </form>
+        </section>
+      </main>
+
+      <aside class="card">
+        <h4>快速 Git 指令</h4>
+        <pre style="white-space:pre-wrap;background:transparent;border:0;padding:0;margin:0;color:var(--muted)">git init
+git add index.html
+git commit -m "Initial commit"
+git branch -M main
+# git remote add origin git@github.com:USERNAME/REPO.git
+# git push -u origin main</pre>
+
+        <h4 style="margin-top:12px">小技巧</h4>
+        <ul>
+          <li>要做使用者網站：儲存庫名稱為 <code>USERNAME.github.io</code>，部署後網址為 <code>https://USERNAME.github.io</code>。</li>
+          <li>專案網站：網址通常是 <code>https://USERNAME.github.io/REPO</code>（取決於 Pages 設定）。</li>
+          <li>HTTPS: GitHub Pages 自動提供憑證。</li>
+        </ul>
+      </aside>
+    </div>
+
+    <footer>
+      © 「你的名字」 — 使用 GitHub Pages 建置 • 範例模板
+    </footer>
+  </div>
+</body>
+</html>
